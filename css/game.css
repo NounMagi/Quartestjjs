@@ -1,0 +1,26 @@
+.piece {
+    border-style: 1px solid black;
+    width: 100px;
+    height: 100px
+}
+
+.boardrow {
+    display: table;
+}
+
+.boardtile {
+    border: 1px solid black;
+    width: 110px;
+    height: 110px;
+    display:table-cell;
+    align-content: stretch;
+    vertical-align: stretch;
+}
+
+.piecespool
+{
+    background-color: aqua;
+    min-height: 100px;
+    max-width: 110px;
+    min-width: 100px;
+}

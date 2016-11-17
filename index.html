@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html> <!--<![endif]-->
+<script src="bower_components/angular/angular.js" ></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="js/dd.module.js"></script>
+<script src="js/app.config.js"></script>
+<script src="js/controllers/app.controllers.js"></script>
+<script src="js/directives/app.directives.js"></script>
+<script src="js/services/app.services.js"></script>
+
+
+
+<head>
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/game.css" rel="stylesheet">
+<!-- Meta-Information -->
+<!-- etc… -->
+
+<!-- Vendor: Bootstrap Stylesheets http://getbootstrap.com -->
+<!-- etc… -->
+
+<!-- Our Website CSS Styles -->
+
+</head>
+<body  ng-app="app" style="height:100%;">
+
+        <nav class="navbar navbar-default navbar-static-top" ng-include="'partials/header.html'">
+        
+        </nav>
+    
+    <div ng-view></div>
+   
+    <!--   <div class="container maincontainer">
+        
+        <div class="row row-no-float" >
+            <div class="col-md-3 col-no-float" ng-include="'partials/roster.html'">
+                
+            </div>
+            <div class="col-md-9 col-no-float" ng-include="'partials/week.html'">
+            </div>
+        </div>
+        
+    </div>-->
+    
+</body>
+</html>

@@ -1,0 +1,59 @@
+header {
+    width: 100%;
+}
+
+.maincontainer {
+    width: 100%;
+}
+
+.toonList
+{
+    overflow-y:scroll;
+    width: 100%;
+    height: 100%;
+}
+
+.toonList .card-block {
+    border: solid black 2px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.card-block p {
+    
+}
+.card-block h4 {
+    
+}
+
+.toonListFooter
+{
+    background-color: blue;
+}
+
+.row-no-float {
+    display: table;
+    float:none;
+    height: 100%;
+    width 100%;
+}
+
+.col-no-float {
+    display: table-cell;
+    float: none;
+    
+}
+
+.rosterPanel {
+    
+}
+
+.weekPanel {
+    
+}
+
+button {
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+}

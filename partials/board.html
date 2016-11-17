@@ -1,0 +1,6 @@
+
+<div class="row" ng-repeat="row in [0,1,2,3]">
+        <div class="col-md-9">
+            <boardtile-directive ng-contoller='GameCtrl' dd-drop-target="true" ng-repeat="col in [0,1,2,3]" nrow="{{row}}" ncol="{{col}}"  class="boardtile" ></boardtile-directive>
+        </div>
+</div>
