@@ -1,6 +1,6 @@
-<div class="piecespool" dd-drop-target="true">
+<div id="piecespool" class="piecespool" drop-piece-pool="true">
     <div  ng-repeat="piece in pieces">
         <piece-directive id="poolPiece{{piece.id}}" shape="{{piece.shape}}"
-                     color="{{piece.color}}" height="{{piece.height}}" hole="{{piece.hole}}" dd-draggable="true"></piece-directive>
+                     color="{{piece.color}}" height="{{piece.height}}" hole="{{piece.hole}}" draggable-piece="true"></piece-directive>
     </div>
 </div>

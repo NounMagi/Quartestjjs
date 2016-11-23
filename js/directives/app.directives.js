@@ -2,7 +2,7 @@
 
 var app = angular.module("app");
 
-var dropLinkFunction = function (attributeName, funcDrop, scope, element, attributes, ctlr) {
+var dropLinkFunction = function (attributeName, funcDrop) {
     var linkFunction = function (scope, element, attributes, ctlr) {
         element.bind("dragover", function(eventObject){
                 eventObject.preventDefault();
@@ -12,9 +12,12 @@ var dropLinkFunction = function (attributeName, funcDrop, scope, element, attrib
                 var tileId = eventObject.dataTransfer.getData("text");
                 var dropTargetAttributeValue = eventObject.target.getAttribute(attributeName);
                 var elementType = element;
+                var tileElement = document.getElementById(tileId);
                 if(dropTargetAttributeValue) {
-                    debugger;
                     eventObject.target.appendChild(document.getElementById(tileId));
+                }else{
+                    var pool = document.getElementById("piecespool");
+                    pool.appendChild(tileElement);
                 }
                 
                 
@@ -28,63 +31,14 @@ var dropLinkFunction = function (attributeName, funcDrop, scope, element, attrib
 app.directive("dropBoardTile",["gameService", function (gameService){
     return {
         restrict: "A",
-/*        link: function (scope, element, attributes, ctlr) {
- 
-            element.bind("dragover", function(eventObject){
-                eventObject.preventDefault();
-            });
- 
-            element.bind("drop", function(eventObject) {
-                // invoke controller/scope move method
-                var tileId = eventObject.dataTransfer.getData("text");
-                var dropTargetAttributeValue = eventObject.target.getAttribute("dd-drop-target");
-                var elementType = element;
-                if(dropTargetAttributeValue) {
-                    debugger;
-                    if(elementType) {
-                        console.log("ElementType");
-                    }
-                    eventObject.target.appendChild(document.getElementById(tileId));
-                }
-                
-                
-                // cancel actual UI element from dropping, since the angular will recreate a the UI element
-                eventObject.preventDefault();
-            });
-        }*/
-        link: dropLinkFunction("dd-drop-target", function(){}, scope, element, attributes, ctlr)
+        link: dropLinkFunction("drop-board-tile", function(){})
     };
 }]);
 
 app.directive("dropPiecePool",["gameService", function (gameService){
     return {
         restrict: "A",
-        link: function (scope, element, attributes, ctlr) {
- 
-            element.bind("dragover", function(eventObject){
-                eventObject.preventDefault();
-            });
- 
-            element.bind("drop", function(eventObject) {
-                // invoke controller/scope move method
-                var tileId = eventObject.dataTransfer.getData("text");
-                var dropTargetAttributeValue = eventObject.target.getAttribute("dd-drop-target");
-                var elementType = element;
-                if(dropTargetAttributeValue) {
-                    debugger;
-                    if(elementType) {
-                        console.log("ElementType");
-                    }
-                    eventObject.target.appendChild(document.getElementById(tileId));
-                    
-                
-                }
-                
-                
-                // cancel actual UI element from dropping, since the angular will recreate a the UI element
-                eventObject.preventDefault();
-            });
-        }
+        link: dropLinkFunction("drop-piece-pool", function(){})
     };
 }]);
 
